@@ -13,7 +13,7 @@ namespace gman
 	{
 		readonly string file_name_settings = "settings.json";
 		readonly string folder_name_gman = ".gman";
-		readonly string version = "v0.3.0";
+		readonly string version = "v0.4.0";
 
 		//  > Constructor
 		public Main()
@@ -192,7 +192,6 @@ namespace gman
 				return;
 			if ( !( CheckGMA( addon_path ) ) )
 				return;
-
 			//	> Check icon
 			if ( !File.Exists( icon_path ) )
 			{
@@ -208,6 +207,34 @@ namespace gman
 			string id = ( match.Success ? match.Value : "null" ).Replace( "=", "" );
 
 			File.WriteAllText( StringPath.RemoveExtension( addon_path ) + ".id", id );
+		}
+
+		private void button_actions_gmpublish_update_Click( object sender, EventArgs e )
+		{
+			SaveSettings();
+
+			//  > Get paths
+			string gmpublish_path = textbox_settings_paths_gmpublish.Text;
+			string addon_path = textbox_settings_paths_addon.Text;
+			string icon_path = StringPath.RemoveExtension( addon_path ) + ".jpg";
+			string id_path = StringPath.RemoveExtension( addon_path ) + ".id";
+
+			string id = File.ReadAllText( id_path );
+
+			//	> Check .gma
+			if( !CheckAddonPath( true ) )
+				return;
+			if( !( CheckGMA( addon_path ) ) )
+				return;
+			//	> Check icon
+			//if( !File.Exists( icon_path ) )
+			//{
+			//	Notification.NoFileError( icon_path );
+			//}
+
+			//	> Publish
+			string stdout = Shell.Execute( gmpublish_path, $"update -icon {icon_path} -addon {addon_path} -id {id}" );
+			Notification.Information( "gmpublish.exe:\n" + stdout );
 		}
 
 		private void button_actions_gmpublish_list_Click( object sender, EventArgs e )
