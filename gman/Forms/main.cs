@@ -36,13 +36,21 @@ namespace gman
             }
         }
 
-        //  > utility functions
+        //  > Utility functions
+        /// <summary>
+        /// Get output path.
+        /// </summary>
+        /// <param name="fallback">String which will be return if the output is not available.</param>
+        /// <returns>Output path or fallback.</returns>
         private string GetOutput( string fallback )
         {
             string output = textbox_settings_paths_output.Text;
             return output.Length == 0 ? fallback : output;
         }
 
+        /// <summary>
+        /// Save settings in a JSON file
+        /// </summary>
         private void SaveSettings()
         {
             Settings settings = new Settings
@@ -57,6 +65,10 @@ namespace gman
             Console.WriteLine( "Settings: saved" );
         }
 
+        /// <summary>
+        /// Check if the addon path is specified, and show a message if it's not.
+        /// </summary>
+        /// <returns>Whenever path is correct</returns>
         private bool CheckAddonPath()
         {
             if( textbox_settings_paths_addon.Text.Length == 0 )

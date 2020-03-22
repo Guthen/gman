@@ -16,6 +16,9 @@ namespace gman.Forms
 {
     public partial class generate_addon : Form
     {
+        /// <summary>
+        /// Ignored files/folders list.
+        /// </summary>
         public List<string> ignore = new List<string>
         {
             "*.cmd",
@@ -46,6 +49,9 @@ namespace gman.Forms
             LoadSettings();
         }
 
+        /// <summary>
+        /// Load settings from 'addon.json' of the folder if exists.
+        /// </summary>
         private void LoadSettings()
         {
             //  > Load 'addon.json' if exists

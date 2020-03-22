@@ -1,6 +1,9 @@
 ﻿
 namespace gman.Classes
 {
+    /// <summary>
+    /// Represents 'main' form settings. 
+    /// </summary>
     public class Settings
     {
         public string gmad_path { get; set; }
@@ -9,6 +12,9 @@ namespace gman.Classes
         public string output_path { get; set; }
     }
 
+    /// <summary>
+    /// Represents 'addon.json' object.
+    /// </summary>
     public class Addon
     {
         //  > Static properties
