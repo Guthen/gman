@@ -15,6 +15,17 @@ namespace gman.Classes
         }
 
         /// <summary>
+        /// Get extension of given path.
+        /// </summary>
+        /// <param name="path">Path to get extension.</param>
+        /// <returns>Extensin</returns>
+        public static string GetExtension( string path )
+        {
+            Match match = Regex.Match( path, @"[.](\w+)\z" );
+            return match.Success ? match.Value : "";
+        }
+
+        /// <summary>
         /// Get file name from given path.
         /// </summary>
         /// <param name="path">Path to get file name.</param>

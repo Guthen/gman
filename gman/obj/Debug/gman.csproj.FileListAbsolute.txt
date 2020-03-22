@@ -54,4 +54,4 @@ C:\Users\arthu\source\repos\gman\gman\obj\Debug\gman.csproj.GenerateResource.cac
 C:\Users\arthu\source\repos\gman\gman\obj\Debug\gman.csproj.CopyComplete
 C:\Users\arthu\source\repos\gman\gman\obj\Debug\gman.exe
 C:\Users\arthu\source\repos\gman\gman\obj\Debug\gman.pdb
-C:\Users\arthu\source\repos\gman\gman\obj\Debug\gman.Forms.generate_addon.resources
+C:\Users\arthu\source\repos\gman\gman\obj\Debug\gman.Forms.GenerateAddonMenu.resources

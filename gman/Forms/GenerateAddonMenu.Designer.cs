@@ -1,6 +1,6 @@
 ﻿namespace gman.Forms
 {
-    partial class generate_addon
+    partial class GenerateAddonMenu
     {
         /// <summary>
         /// Required designer variable.

@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.Json;
 using System.IO;
@@ -14,7 +8,7 @@ using gman.Classes;
 
 namespace gman.Forms
 {
-    public partial class generate_addon : Form
+    public partial class GenerateAddonMenu : Form
     {
         /// <summary>
         /// Ignored files/folders list.
@@ -32,7 +26,7 @@ namespace gman.Forms
             ".vscode/*",
         };
 
-        public generate_addon()
+        public GenerateAddonMenu()
         {
             InitializeComponent();
 
@@ -66,7 +60,7 @@ namespace gman.Forms
                 }
                 catch( JsonException e )
                 {
-                    MessageBox.Show( $"{path}:\n{e.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                    Notification.Error( $"{path}:\n{e.Message}" );
                     Close();
 
                     return;
@@ -95,15 +89,14 @@ namespace gman.Forms
             };
 
             string path = textbox_settings_path.Text + "/addon.json";
-            File.WriteAllText( path, JsonSerializer.Serialize( addon, new JsonSerializerOptions
+            JsonSerializerOptions options = new JsonSerializerOptions
             {
                 WriteIndented = true,
-            } ) );
+            };
+            File.WriteAllText( path, JsonSerializer.Serialize( addon, options ) );
 
             if( File.Exists( path ) )
-            {
-                MessageBox.Show( "Success! File 'addon.json' has been generated!", "Generated", MessageBoxButtons.OK, MessageBoxIcon.Information );
-            }
+                Notification.Information( "Success! File 'addon.json' has been generated!" );
         }
 
         private void textbox_settings_path_TextChanged( object sender, EventArgs e )

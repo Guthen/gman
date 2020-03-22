@@ -91,28 +91,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Notification.cs" />
     <Compile Include="Classes\StringPath.cs" />
     <Compile Include="Classes\Shell.cs" />
     <Compile Include="Classes\JsonClasses.cs" />
-    <Compile Include="Forms\generate_addon.cs">
+    <Compile Include="Forms\GenerateAddonMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\generate_addon.Designer.cs">
-      <DependentUpon>generate_addon.cs</DependentUpon>
+    <Compile Include="Forms\GenerateAddonMenu.Designer.cs">
+      <DependentUpon>GenerateAddonMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\main.cs">
+    <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\main.Designer.cs">
-      <DependentUpon>main.cs</DependentUpon>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\generate_addon.resx">
-      <DependentUpon>generate_addon.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\GenerateAddonMenu.resx">
+      <DependentUpon>GenerateAddonMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\main.resx">
-      <DependentUpon>main.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
