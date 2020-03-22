@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace gman.Classes
 {
@@ -25,9 +26,18 @@ namespace gman.Classes
                 }
             };
 
-            process.Start();
-            string result = process.StandardOutput.ReadToEnd();
-            process.WaitForExit();
+            string result;
+            try
+            {
+                process.Start();
+                result = process.StandardOutput.ReadToEnd();
+                process.WaitForExit();
+            }
+            catch ( System.ComponentModel.Win32Exception e )
+            {
+                MessageBox.Show( $"Process failed:\n{e.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                return "";
+            }
 
             return result;
         }

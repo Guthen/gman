@@ -12,7 +12,7 @@ namespace gman
     {
         readonly string file_name_settings = "settings.json";
         readonly string folder_name_gman = ".gman";
-        readonly string version = "v0.1.0";
+        readonly string version = "v0.2.0";
 
         //  > Constructor
         public main()
@@ -109,9 +109,12 @@ namespace gman
 
             //  > Create gma
             string stdout = Shell.Execute( gmad_path, $"create -folder {addon_path} -out {path}/{StringPath.GetFolderName( addon_path )}.gma" );
-            //Console.WriteLine( "gmad.exe: " + stdout );
+            if ( stdout.Length == 0 )
+            {
+                return;
+            }
 
-            MessageBox.Show( "gmad.exe: " + stdout, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information );
+            MessageBox.Show( "gmad.exe:\n" + stdout, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information );
         }
 
         private void button_actions_gmad_extract_Click( object sender, EventArgs e )
@@ -138,8 +141,35 @@ namespace gman
 
             //  > Extract gma
             string stdout = Shell.Execute( gmad_path, $"extract -file {addon_path} -out {output}" );
+            if( stdout.Length == 0 )
+            {
+                return;
+            }
 
-            MessageBox.Show( "gmad.exe: " + stdout, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information );
+            MessageBox.Show( "gmad.exe:\n" + stdout, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information );
+        }
+
+        //  > gmpublish functions
+        private void button_actions_gmpublish_publish_Click( object sender, EventArgs e )
+        {
+            SaveSettings();
+        }
+
+        private void button_actions_gmpublish_list_Click( object sender, EventArgs e )
+        {
+            SaveSettings();
+
+            //  > Get paths
+            string gmpublish_path = textbox_settings_paths_gmpublish.Text;
+
+            //  > Get list
+            string stdout = Shell.Execute( gmpublish_path, "list" );
+            if( stdout.Length == 0 )
+            {
+                return;
+            }
+
+            MessageBox.Show( "gmpublish.exe:\n" + stdout, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information );
         }
 
         //  > gman functions

@@ -37,7 +37,6 @@
             System.Windows.Forms.GroupBox groupbox_actions_gman;
             System.Windows.Forms.GroupBox groupbox_actions_gmpublish;
             System.Windows.Forms.GroupBox groupbox_actions_gmad;
-            this.groupbox_settings = new System.Windows.Forms.GroupBox();
             this.textbox_settings_paths_output = new System.Windows.Forms.TextBox();
             this.textbox_settings_paths_gmpublish = new System.Windows.Forms.TextBox();
             this.textbox_settings_paths_addon = new System.Windows.Forms.TextBox();
@@ -48,6 +47,8 @@
             this.button_actions_gmpublish_publish = new System.Windows.Forms.Button();
             this.button_actions_gmad_create = new System.Windows.Forms.Button();
             this.button_actions_gmad_extract = new System.Windows.Forms.Button();
+            this.groupbox_settings = new System.Windows.Forms.GroupBox();
+            this.button_actions_gmpublish_list = new System.Windows.Forms.Button();
             groupbox_settings_paths = new System.Windows.Forms.GroupBox();
             label1 = new System.Windows.Forms.Label();
             label_gmpublish_path = new System.Windows.Forms.Label();
@@ -57,23 +58,13 @@
             groupbox_actions_gman = new System.Windows.Forms.GroupBox();
             groupbox_actions_gmpublish = new System.Windows.Forms.GroupBox();
             groupbox_actions_gmad = new System.Windows.Forms.GroupBox();
-            this.groupbox_settings.SuspendLayout();
             groupbox_settings_paths.SuspendLayout();
             groupbox_actions.SuspendLayout();
             groupbox_actions_gman.SuspendLayout();
             groupbox_actions_gmpublish.SuspendLayout();
             groupbox_actions_gmad.SuspendLayout();
+            this.groupbox_settings.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupbox_settings
-            // 
-            this.groupbox_settings.Controls.Add(groupbox_settings_paths);
-            this.groupbox_settings.Location = new System.Drawing.Point(13, 13);
-            this.groupbox_settings.Name = "groupbox_settings";
-            this.groupbox_settings.Size = new System.Drawing.Size(371, 156);
-            this.groupbox_settings.TabIndex = 0;
-            this.groupbox_settings.TabStop = false;
-            this.groupbox_settings.Text = "Settings";
             // 
             // groupbox_settings_paths
             // 
@@ -167,7 +158,7 @@
             groupbox_actions.Controls.Add(groupbox_actions_gmad);
             groupbox_actions.Location = new System.Drawing.Point(13, 175);
             groupbox_actions.Name = "groupbox_actions";
-            groupbox_actions.Size = new System.Drawing.Size(371, 287);
+            groupbox_actions.Size = new System.Drawing.Size(371, 310);
             groupbox_actions.TabIndex = 1;
             groupbox_actions.TabStop = false;
             groupbox_actions.Text = "Actions";
@@ -176,7 +167,7 @@
             // 
             groupbox_actions_gman.Controls.Add(this.button_actions_gman_generation);
             groupbox_actions_gman.Controls.Add(this.button_actions_gman_update);
-            groupbox_actions_gman.Location = new System.Drawing.Point(7, 201);
+            groupbox_actions_gman.Location = new System.Drawing.Point(7, 224);
             groupbox_actions_gman.Name = "groupbox_actions_gman";
             groupbox_actions_gman.Size = new System.Drawing.Size(358, 80);
             groupbox_actions_gman.TabIndex = 8;
@@ -205,11 +196,12 @@
             // 
             // groupbox_actions_gmpublish
             // 
+            groupbox_actions_gmpublish.Controls.Add(this.button_actions_gmpublish_list);
             groupbox_actions_gmpublish.Controls.Add(this.button3);
             groupbox_actions_gmpublish.Controls.Add(this.button_actions_gmpublish_publish);
             groupbox_actions_gmpublish.Location = new System.Drawing.Point(7, 112);
             groupbox_actions_gmpublish.Name = "groupbox_actions_gmpublish";
-            groupbox_actions_gmpublish.Size = new System.Drawing.Size(358, 82);
+            groupbox_actions_gmpublish.Size = new System.Drawing.Size(358, 106);
             groupbox_actions_gmpublish.TabIndex = 7;
             groupbox_actions_gmpublish.TabStop = false;
             groupbox_actions_gmpublish.Text = "gmpublish";
@@ -233,6 +225,7 @@
             this.button_actions_gmpublish_publish.TabIndex = 4;
             this.button_actions_gmpublish_publish.Text = "Publish .gma";
             this.button_actions_gmpublish_publish.UseVisualStyleBackColor = true;
+            this.button_actions_gmpublish_publish.Click += new System.EventHandler(this.button_actions_gmpublish_publish_Click);
             // 
             // groupbox_actions_gmad
             // 
@@ -265,27 +258,46 @@
             this.button_actions_gmad_extract.UseVisualStyleBackColor = true;
             this.button_actions_gmad_extract.Click += new System.EventHandler(this.button_actions_gmad_extract_Click);
             // 
+            // groupbox_settings
+            // 
+            this.groupbox_settings.Controls.Add(groupbox_settings_paths);
+            this.groupbox_settings.Location = new System.Drawing.Point(13, 13);
+            this.groupbox_settings.Name = "groupbox_settings";
+            this.groupbox_settings.Size = new System.Drawing.Size(371, 156);
+            this.groupbox_settings.TabIndex = 0;
+            this.groupbox_settings.TabStop = false;
+            this.groupbox_settings.Text = "Settings";
+            // 
+            // button_actions_gmpublish_list
+            // 
+            this.button_actions_gmpublish_list.Location = new System.Drawing.Point(39, 77);
+            this.button_actions_gmpublish_list.Name = "button_actions_gmpublish_list";
+            this.button_actions_gmpublish_list.Size = new System.Drawing.Size(278, 23);
+            this.button_actions_gmpublish_list.TabIndex = 5;
+            this.button_actions_gmpublish_list.Text = "Addons list";
+            this.button_actions_gmpublish_list.UseVisualStyleBackColor = true;
+            this.button_actions_gmpublish_list.Click += new System.EventHandler(this.button_actions_gmpublish_list_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(396, 472);
+            this.ClientSize = new System.Drawing.Size(396, 497);
             this.Controls.Add(groupbox_actions);
             this.Controls.Add(this.groupbox_settings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MaximizeBox = false;
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Garry\'s Mod Addon Manager";
-            this.groupbox_settings.ResumeLayout(false);
             groupbox_settings_paths.ResumeLayout(false);
             groupbox_settings_paths.PerformLayout();
             groupbox_actions.ResumeLayout(false);
             groupbox_actions_gman.ResumeLayout(false);
             groupbox_actions_gmpublish.ResumeLayout(false);
             groupbox_actions_gmad.ResumeLayout(false);
+            this.groupbox_settings.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -303,6 +315,7 @@
         private System.Windows.Forms.Button button_actions_gman_update;
         private System.Windows.Forms.Button button_actions_gman_generation;
         private System.Windows.Forms.TextBox textbox_settings_paths_output;
+        private System.Windows.Forms.Button button_actions_gmpublish_list;
     }
 }
 
