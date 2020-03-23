@@ -49,6 +49,8 @@
 			this.button_actions_gmad_create = new System.Windows.Forms.Button();
 			this.button_actions_gmad_extract = new System.Windows.Forms.Button();
 			this.groupbox_settings = new System.Windows.Forms.GroupBox();
+			this.folderbrowser_settings_paths_output = new System.Windows.Forms.FolderBrowserDialog();
+			this.button_settings_paths_output_browse = new System.Windows.Forms.Button();
 			groupbox_settings_paths = new System.Windows.Forms.GroupBox();
 			label1 = new System.Windows.Forms.Label();
 			label_gmpublish_path = new System.Windows.Forms.Label();
@@ -68,6 +70,7 @@
 			// 
 			// groupbox_settings_paths
 			// 
+			groupbox_settings_paths.Controls.Add(this.button_settings_paths_output_browse);
 			groupbox_settings_paths.Controls.Add(this.textbox_settings_paths_output);
 			groupbox_settings_paths.Controls.Add(label1);
 			groupbox_settings_paths.Controls.Add(this.textbox_settings_paths_gmpublish);
@@ -87,7 +90,7 @@
 			// 
 			this.textbox_settings_paths_output.Location = new System.Drawing.Point(79, 97);
 			this.textbox_settings_paths_output.Name = "textbox_settings_paths_output";
-			this.textbox_settings_paths_output.Size = new System.Drawing.Size(275, 20);
+			this.textbox_settings_paths_output.Size = new System.Drawing.Size(208, 20);
 			this.textbox_settings_paths_output.TabIndex = 5;
 			// 
 			// label1
@@ -121,7 +124,7 @@
 			// 
 			this.textbox_settings_paths_addon.Location = new System.Drawing.Point(79, 71);
 			this.textbox_settings_paths_addon.Name = "textbox_settings_paths_addon";
-			this.textbox_settings_paths_addon.Size = new System.Drawing.Size(275, 20);
+			this.textbox_settings_paths_addon.Size = new System.Drawing.Size(273, 20);
 			this.textbox_settings_paths_addon.TabIndex = 3;
 			// 
 			// textbox_settings_paths_gmad
@@ -277,6 +280,20 @@
 			this.groupbox_settings.TabStop = false;
 			this.groupbox_settings.Text = "Settings";
 			// 
+			// folderbrowser_settings_paths_output
+			// 
+			this.folderbrowser_settings_paths_output.Description = "Output path";
+			// 
+			// button_settings_paths_output_browse
+			// 
+			this.button_settings_paths_output_browse.Location = new System.Drawing.Point(293, 96);
+			this.button_settings_paths_output_browse.Name = "button_settings_paths_output_browse";
+			this.button_settings_paths_output_browse.Size = new System.Drawing.Size(59, 22);
+			this.button_settings_paths_output_browse.TabIndex = 6;
+			this.button_settings_paths_output_browse.Text = "Browse";
+			this.button_settings_paths_output_browse.UseVisualStyleBackColor = true;
+			this.button_settings_paths_output_browse.Click += new System.EventHandler(this.button_settings_paths_output_browse_Click);
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,6 +332,8 @@
         private System.Windows.Forms.Button button_actions_gman_generation;
         private System.Windows.Forms.TextBox textbox_settings_paths_output;
         private System.Windows.Forms.Button button_actions_gmpublish_list;
-    }
+		private System.Windows.Forms.FolderBrowserDialog folderbrowser_settings_paths_output;
+		private System.Windows.Forms.Button button_settings_paths_output_browse;
+	}
 }
 

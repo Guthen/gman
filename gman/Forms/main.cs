@@ -13,7 +13,7 @@ namespace gman
 	{
 		readonly string file_name_settings = "settings.json";
 		readonly string folder_name_gman = ".gman";
-		readonly string version = "v0.4.0";
+		readonly string version = "v0.4.1";
 
 		//  > Constructor
 		public Main()
@@ -35,6 +35,13 @@ namespace gman
 				textbox_settings_paths_output.Text = settings.output_path;
 				Console.WriteLine( "Settings: loaded" );
 			}
+		}
+
+		//	> Folder browsers
+		private void button_settings_paths_output_browse_Click( object sender, EventArgs e )
+		{
+			if( folderbrowser_settings_paths_output.ShowDialog() == DialogResult.OK )
+				textbox_settings_paths_output.Text = folderbrowser_settings_paths_output.SelectedPath;
 		}
 
 		//  > Utility functions
@@ -105,7 +112,7 @@ namespace gman
 		/// <returns>Whenever the file is a .gma file.</returns>
 		private bool CheckGMA( string path )
 		{
-			if ( !( StringPath.GetExtension( path ) == ".gma" ) )
+			if( !( StringPath.GetExtension( path ) == ".gma" ) )
 			{
 				Notification.Error( $"File '{path}' isn't a .gma file! Please specify a correct file path!" );
 				return false;
@@ -188,12 +195,12 @@ namespace gman
 			string icon_path = StringPath.RemoveExtension( addon_path ) + ".jpg";
 
 			//	> Check .gma
-			if ( !CheckAddonPath( true ) )
+			if( !CheckAddonPath( true ) )
 				return;
-			if ( !( CheckGMA( addon_path ) ) )
+			if( !( CheckGMA( addon_path ) ) )
 				return;
 			//	> Check icon
-			if ( !File.Exists( icon_path ) )
+			if( !File.Exists( icon_path ) )
 			{
 				Notification.NoFileError( icon_path );
 			}
@@ -259,7 +266,8 @@ namespace gman
 
 			//  > Show up new form
 			GenerateAddonMenu menu = new GenerateAddonMenu();
-			menu.ignore.Add( folder_name_gman + "/*" );
+			menu.GenerateIgnoreList();
+			menu.AddIgnoreListElement( folder_name_gman + "/*" );
 			menu.SetAddonPath( textbox_settings_paths_addon.Text );
 			if( !menu.IsDisposed )
 				menu.ShowDialog( this );

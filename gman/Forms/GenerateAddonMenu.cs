@@ -13,19 +13,9 @@ namespace gman.Forms
         /// <summary>
         /// Ignored files/folders list.
         /// </summary>
-        public List<string> ignore = new List<string>
-        {
-            "*.cmd",
-            "*.ini",
-            "*.lnk",
-            "*.url",
-            "*.md",
-            ".gitignore",
-            ".gitattributes",
-            ".git/*",
-            ".vscode/*",
-        };
+        public List<string> ignore;
 
+        //  > Constructor
         public GenerateAddonMenu()
         {
             InitializeComponent();
@@ -36,6 +26,38 @@ namespace gman.Forms
             combobox_settings_tag2.Items.AddRange( Addon.Tags );
         }
 
+        /// <summary>
+        /// Generate the default ignore list.
+        /// </summary>
+        public void GenerateIgnoreList()
+        {
+            ignore = new List<string>
+            {
+                "*.cmd",
+                "*.ini",
+                "*.lnk",
+                "*.url",
+                "*.md",
+                ".gitignore",
+                ".gitattributes",
+                ".git/*",
+                ".vscode/*",
+            };
+        }
+
+        /// <summary>
+        /// Add element to the ignore list.
+        /// </summary>
+        /// <param name="element">Element to add.</param>
+        public void AddIgnoreListElement( string element )
+        {
+            ignore.Add( element );
+        }
+
+        /// <summary>
+        /// Set addon path TextBox's text.
+        /// </summary>
+        /// <param name="path">Path to set.</param>
         public void SetAddonPath( string path )
         {
             textbox_settings_path.Text = path;
@@ -76,17 +98,32 @@ namespace gman.Forms
 
         private void button_actions_generate_Click( object sender, EventArgs e )
         {
-            Addon addon = new Addon
+            //  > Checks
+            if ( !( StringPath.GetExtension( textbox_settings_path.Text ).Length == 0 ) ) {
+                Notification.Error( $"File '{textbox_settings_path.Text}' isn't a directory! Please specify a valid directory!" );
+                return;
+            }
+
+            Addon addon;
+            try
             {
-                title = textbox_settings_title.Text,
-                type = combobox_settings_type.SelectedItem.ToString(),
-                tags = new string[]
+                addon = new Addon
                 {
-                    combobox_settings_tag1.SelectedItem.ToString(),
-                    combobox_settings_tag2.SelectedItem.ToString(),
-                },
-                ignore = ignore.ToArray(),
-            };
+                    title = textbox_settings_title.Text,
+                    type = combobox_settings_type.SelectedItem.ToString(),
+                    tags = new string[]
+                    {
+                        combobox_settings_tag1.SelectedItem.ToString(),
+                        combobox_settings_tag2.SelectedItem.ToString(),
+                    },
+                    ignore = ignore.ToArray(),
+                };
+            }
+            catch ( NullReferenceException exception )
+            {
+                Notification.Error( "You didn't specified all fields, unable to generate the JSON file." );
+                return;
+            }
 
             string path = textbox_settings_path.Text + "/addon.json";
             JsonSerializerOptions options = new JsonSerializerOptions
