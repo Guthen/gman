@@ -119,7 +119,7 @@ namespace gman.Forms
                     ignore = ignore.ToArray(),
                 };
             }
-            catch ( NullReferenceException exception )
+            catch ( NullReferenceException )
             {
                 Notification.Error( "You didn't specified all fields, unable to generate the JSON file." );
                 return;
