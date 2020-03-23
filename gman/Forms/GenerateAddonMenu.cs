@@ -136,9 +136,19 @@ namespace gman.Forms
                 Notification.Information( "Success! File 'addon.json' has been generated!" );
         }
 
+        //  > Form elements functions
         private void textbox_settings_path_TextChanged( object sender, EventArgs e )
         {
             LoadSettings();
+        }
+
+        private void button_settings_output_browse_Click( object sender, EventArgs e )
+        {
+            if ( folderbrowser_settings_addon_browser.ShowDialog() == DialogResult.OK )
+            {
+                textbox_settings_path.Text = folderbrowser_settings_addon_browser.SelectedPath;
+                //LoadSettings();
+            }
         }
     }
 }

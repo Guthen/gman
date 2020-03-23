@@ -37,6 +37,8 @@
 			System.Windows.Forms.GroupBox groupbox_actions_gman;
 			System.Windows.Forms.GroupBox groupbox_actions_gmpublish;
 			System.Windows.Forms.GroupBox groupbox_actions_gmad;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+			this.button_settings_paths_output_browse = new System.Windows.Forms.Button();
 			this.textbox_settings_paths_output = new System.Windows.Forms.TextBox();
 			this.textbox_settings_paths_gmpublish = new System.Windows.Forms.TextBox();
 			this.textbox_settings_paths_addon = new System.Windows.Forms.TextBox();
@@ -50,7 +52,6 @@
 			this.button_actions_gmad_extract = new System.Windows.Forms.Button();
 			this.groupbox_settings = new System.Windows.Forms.GroupBox();
 			this.folderbrowser_settings_paths_output = new System.Windows.Forms.FolderBrowserDialog();
-			this.button_settings_paths_output_browse = new System.Windows.Forms.Button();
 			groupbox_settings_paths = new System.Windows.Forms.GroupBox();
 			label1 = new System.Windows.Forms.Label();
 			label_gmpublish_path = new System.Windows.Forms.Label();
@@ -85,6 +86,16 @@
 			groupbox_settings_paths.TabIndex = 2;
 			groupbox_settings_paths.TabStop = false;
 			groupbox_settings_paths.Text = "Paths";
+			// 
+			// button_settings_paths_output_browse
+			// 
+			this.button_settings_paths_output_browse.Location = new System.Drawing.Point(293, 96);
+			this.button_settings_paths_output_browse.Name = "button_settings_paths_output_browse";
+			this.button_settings_paths_output_browse.Size = new System.Drawing.Size(59, 22);
+			this.button_settings_paths_output_browse.TabIndex = 6;
+			this.button_settings_paths_output_browse.Text = "Browse";
+			this.button_settings_paths_output_browse.UseVisualStyleBackColor = true;
+			this.button_settings_paths_output_browse.Click += new System.EventHandler(this.button_settings_paths_output_browse_Click);
 			// 
 			// textbox_settings_paths_output
 			// 
@@ -284,16 +295,6 @@
 			// 
 			this.folderbrowser_settings_paths_output.Description = "Output path";
 			// 
-			// button_settings_paths_output_browse
-			// 
-			this.button_settings_paths_output_browse.Location = new System.Drawing.Point(293, 96);
-			this.button_settings_paths_output_browse.Name = "button_settings_paths_output_browse";
-			this.button_settings_paths_output_browse.Size = new System.Drawing.Size(59, 22);
-			this.button_settings_paths_output_browse.TabIndex = 6;
-			this.button_settings_paths_output_browse.Text = "Browse";
-			this.button_settings_paths_output_browse.UseVisualStyleBackColor = true;
-			this.button_settings_paths_output_browse.Click += new System.EventHandler(this.button_settings_paths_output_browse_Click);
-			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,6 +304,7 @@
 			this.Controls.Add(groupbox_actions);
 			this.Controls.Add(this.groupbox_settings);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "Main";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

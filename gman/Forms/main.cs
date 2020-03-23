@@ -13,7 +13,7 @@ namespace gman
 	{
 		readonly string file_name_settings = "settings.json";
 		readonly string folder_name_gman = ".gman";
-		readonly string version = "v0.4.1";
+		readonly string version = "v0.5.0";
 
 		//  > Constructor
 		public Main()

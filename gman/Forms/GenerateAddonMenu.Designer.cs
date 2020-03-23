@@ -35,12 +35,15 @@
 			System.Windows.Forms.Label label3;
 			System.Windows.Forms.Label label2;
 			System.Windows.Forms.GroupBox groupbox_actions;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenerateAddonMenu));
+			this.button_settings_output_browse = new System.Windows.Forms.Button();
 			this.textbox_settings_path = new System.Windows.Forms.TextBox();
 			this.combobox_settings_tag2 = new System.Windows.Forms.ComboBox();
 			this.combobox_settings_tag1 = new System.Windows.Forms.ComboBox();
 			this.combobox_settings_type = new System.Windows.Forms.ComboBox();
 			this.textbox_settings_title = new System.Windows.Forms.TextBox();
 			this.button_actions_generate = new System.Windows.Forms.Button();
+			this.folderbrowser_settings_addon_browser = new System.Windows.Forms.FolderBrowserDialog();
 			label1 = new System.Windows.Forms.Label();
 			groupbox_settings = new System.Windows.Forms.GroupBox();
 			label5 = new System.Windows.Forms.Label();
@@ -64,6 +67,7 @@
 			// 
 			// groupbox_settings
 			// 
+			groupbox_settings.Controls.Add(this.button_settings_output_browse);
 			groupbox_settings.Controls.Add(this.textbox_settings_path);
 			groupbox_settings.Controls.Add(label5);
 			groupbox_settings.Controls.Add(label4);
@@ -81,11 +85,21 @@
 			groupbox_settings.TabStop = false;
 			groupbox_settings.Text = "Settings";
 			// 
+			// button_settings_output_browse
+			// 
+			this.button_settings_output_browse.Location = new System.Drawing.Point(340, 72);
+			this.button_settings_output_browse.Name = "button_settings_output_browse";
+			this.button_settings_output_browse.Size = new System.Drawing.Size(59, 22);
+			this.button_settings_output_browse.TabIndex = 10;
+			this.button_settings_output_browse.Text = "Browse";
+			this.button_settings_output_browse.UseVisualStyleBackColor = true;
+			this.button_settings_output_browse.Click += new System.EventHandler(this.button_settings_output_browse_Click);
+			// 
 			// textbox_settings_path
 			// 
 			this.textbox_settings_path.Location = new System.Drawing.Point(52, 73);
 			this.textbox_settings_path.Name = "textbox_settings_path";
-			this.textbox_settings_path.Size = new System.Drawing.Size(347, 20);
+			this.textbox_settings_path.Size = new System.Drawing.Size(282, 20);
 			this.textbox_settings_path.TabIndex = 9;
 			this.textbox_settings_path.TextChanged += new System.EventHandler(this.textbox_settings_path_TextChanged);
 			// 
@@ -180,6 +194,11 @@
 			this.button_actions_generate.UseVisualStyleBackColor = true;
 			this.button_actions_generate.Click += new System.EventHandler(this.button_actions_generate_Click);
 			// 
+			// folderbrowser_settings_addon_browser
+			// 
+			this.folderbrowser_settings_addon_browser.Description = "Addon path";
+			this.folderbrowser_settings_addon_browser.RootFolder = System.Environment.SpecialFolder.Recent;
+			// 
 			// GenerateAddonMenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +207,7 @@
 			this.Controls.Add(groupbox_actions);
 			this.Controls.Add(groupbox_settings);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "GenerateAddonMenu";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -207,5 +227,7 @@
         private System.Windows.Forms.ComboBox combobox_settings_tag1;
         private System.Windows.Forms.Button button_actions_generate;
         private System.Windows.Forms.TextBox textbox_settings_path;
-    }
+		private System.Windows.Forms.Button button_settings_output_browse;
+		private System.Windows.Forms.FolderBrowserDialog folderbrowser_settings_addon_browser;
+	}
 }
