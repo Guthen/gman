@@ -28,46 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tc_main = new System.Windows.Forms.TabControl();
             this.tp_create = new System.Windows.Forms.TabPage();
+            this.gb_create_gma = new System.Windows.Forms.GroupBox();
+            this.b_create_gma_compress = new System.Windows.Forms.Button();
+            this.b_create_gma_update = new System.Windows.Forms.Button();
+            this.b_create_gma_publish = new System.Windows.Forms.Button();
+            this.gb_create_json = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tb_create_json_ignore = new System.Windows.Forms.TextBox();
+            this.cob_create_json_tag_2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cob_create_json_tag_1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.b_create_json_generate = new System.Windows.Forms.Button();
+            this.cob_create_json_type = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_create_json_title = new System.Windows.Forms.TextBox();
             this.l_create_folder = new System.Windows.Forms.Label();
             this.b_create_folder = new System.Windows.Forms.Button();
             this.tb_create_folder = new System.Windows.Forms.TextBox();
             this.tp_extract = new System.Windows.Forms.TabPage();
             this.tp_settings = new System.Windows.Forms.TabPage();
-            this.l_settings_gmh = new System.Windows.Forms.Label();
-            this.b_settings_gmh = new System.Windows.Forms.Button();
-            this.tb_settings_gmh = new System.Windows.Forms.TextBox();
-            this.cb_settings_paths = new System.Windows.Forms.CheckBox();
             this.gb_settings_paths = new System.Windows.Forms.GroupBox();
-            this.b_settings_paths_gmad = new System.Windows.Forms.Button();
-            this.tb_settings_paths_gmad = new System.Windows.Forms.TextBox();
-            this.l_settings_paths_gmad = new System.Windows.Forms.Label();
             this.l_settings_paths_gmpublish = new System.Windows.Forms.Label();
             this.b_settings_paths_gmpublish = new System.Windows.Forms.Button();
             this.tb_settings_paths_gmpublish = new System.Windows.Forms.TextBox();
-            this.gb_create_json = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tb_create_json_title = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cob_create_json_type = new System.Windows.Forms.ComboBox();
-            this.b_create_json_generate = new System.Windows.Forms.Button();
-            this.cob_create_json_tag_1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cob_create_json_tag_2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tb_create_json_ignore = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.gb_create_workshop = new System.Windows.Forms.GroupBox();
-            this.b_create_workshop_publish = new System.Windows.Forms.Button();
-            this.b_create_workshop_update = new System.Windows.Forms.Button();
-            this.b_create_workshop_compress = new System.Windows.Forms.Button();
+            this.l_settings_paths_gmad = new System.Windows.Forms.Label();
+            this.b_settings_paths_gmad = new System.Windows.Forms.Button();
+            this.cb_settings_paths = new System.Windows.Forms.CheckBox();
+            this.tb_settings_paths_gmad = new System.Windows.Forms.TextBox();
+            this.l_settings_gmh = new System.Windows.Forms.Label();
+            this.b_settings_gmh = new System.Windows.Forms.Button();
+            this.tb_settings_gmh = new System.Windows.Forms.TextBox();
+            this.tool_tip = new System.Windows.Forms.ToolTip(this.components);
+            this.l_version = new System.Windows.Forms.Label();
+            this.l_author = new System.Windows.Forms.Label();
+            this.b_create_json_find = new System.Windows.Forms.Button();
             this.tc_main.SuspendLayout();
             this.tp_create.SuspendLayout();
+            this.gb_create_gma.SuspendLayout();
+            this.gb_create_json.SuspendLayout();
             this.tp_settings.SuspendLayout();
             this.gb_settings_paths.SuspendLayout();
-            this.gb_create_json.SuspendLayout();
-            this.gb_create_workshop.SuspendLayout();
             this.SuspendLayout();
             // 
             // tc_main
@@ -83,7 +88,7 @@
             // 
             // tp_create
             // 
-            this.tp_create.Controls.Add(this.gb_create_workshop);
+            this.tp_create.Controls.Add(this.gb_create_gma);
             this.tp_create.Controls.Add(this.gb_create_json);
             this.tp_create.Controls.Add(this.l_create_folder);
             this.tp_create.Controls.Add(this.b_create_folder);
@@ -95,6 +100,166 @@
             this.tp_create.TabIndex = 0;
             this.tp_create.Text = "Create";
             this.tp_create.UseVisualStyleBackColor = true;
+            // 
+            // gb_create_gma
+            // 
+            this.gb_create_gma.Controls.Add(this.b_create_gma_compress);
+            this.gb_create_gma.Controls.Add(this.b_create_gma_update);
+            this.gb_create_gma.Controls.Add(this.b_create_gma_publish);
+            this.gb_create_gma.Location = new System.Drawing.Point(9, 265);
+            this.gb_create_gma.Name = "gb_create_gma";
+            this.gb_create_gma.Size = new System.Drawing.Size(341, 111);
+            this.gb_create_gma.TabIndex = 4;
+            this.gb_create_gma.TabStop = false;
+            this.gb_create_gma.Text = "GMA";
+            // 
+            // b_create_gma_compress
+            // 
+            this.b_create_gma_compress.Location = new System.Drawing.Point(60, 19);
+            this.b_create_gma_compress.Name = "b_create_gma_compress";
+            this.b_create_gma_compress.Size = new System.Drawing.Size(220, 23);
+            this.b_create_gma_compress.TabIndex = 2;
+            this.b_create_gma_compress.Text = "Compress";
+            this.b_create_gma_compress.UseVisualStyleBackColor = true;
+            this.b_create_gma_compress.Click += new System.EventHandler(this.b_create_gma_compress_Click);
+            // 
+            // b_create_gma_update
+            // 
+            this.b_create_gma_update.Enabled = false;
+            this.b_create_gma_update.Location = new System.Drawing.Point(60, 77);
+            this.b_create_gma_update.Name = "b_create_gma_update";
+            this.b_create_gma_update.Size = new System.Drawing.Size(220, 23);
+            this.b_create_gma_update.TabIndex = 1;
+            this.b_create_gma_update.Text = "Update";
+            this.b_create_gma_update.UseVisualStyleBackColor = true;
+            this.b_create_gma_update.Click += new System.EventHandler(this.b_create_gma_update_Click);
+            // 
+            // b_create_gma_publish
+            // 
+            this.b_create_gma_publish.Location = new System.Drawing.Point(60, 48);
+            this.b_create_gma_publish.Name = "b_create_gma_publish";
+            this.b_create_gma_publish.Size = new System.Drawing.Size(220, 23);
+            this.b_create_gma_publish.TabIndex = 0;
+            this.b_create_gma_publish.Text = "Publish";
+            this.b_create_gma_publish.UseVisualStyleBackColor = true;
+            this.b_create_gma_publish.Click += new System.EventHandler(this.b_create_gma_publish_Click);
+            // 
+            // gb_create_json
+            // 
+            this.gb_create_json.Controls.Add(this.b_create_json_find);
+            this.gb_create_json.Controls.Add(this.label5);
+            this.gb_create_json.Controls.Add(this.tb_create_json_ignore);
+            this.gb_create_json.Controls.Add(this.cob_create_json_tag_2);
+            this.gb_create_json.Controls.Add(this.label4);
+            this.gb_create_json.Controls.Add(this.cob_create_json_tag_1);
+            this.gb_create_json.Controls.Add(this.label3);
+            this.gb_create_json.Controls.Add(this.b_create_json_generate);
+            this.gb_create_json.Controls.Add(this.cob_create_json_type);
+            this.gb_create_json.Controls.Add(this.label2);
+            this.gb_create_json.Controls.Add(this.label1);
+            this.gb_create_json.Controls.Add(this.tb_create_json_title);
+            this.gb_create_json.Location = new System.Drawing.Point(9, 56);
+            this.gb_create_json.Name = "gb_create_json";
+            this.gb_create_json.Size = new System.Drawing.Size(341, 202);
+            this.gb_create_json.TabIndex = 3;
+            this.gb_create_json.TabStop = false;
+            this.gb_create_json.Text = "JSON";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Ignore";
+            // 
+            // tb_create_json_ignore
+            // 
+            this.tb_create_json_ignore.Location = new System.Drawing.Point(7, 87);
+            this.tb_create_json_ignore.Multiline = true;
+            this.tb_create_json_ignore.Name = "tb_create_json_ignore";
+            this.tb_create_json_ignore.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tb_create_json_ignore.Size = new System.Drawing.Size(159, 79);
+            this.tb_create_json_ignore.TabIndex = 14;
+            // 
+            // cob_create_json_tag_2
+            // 
+            this.cob_create_json_tag_2.FormattingEnabled = true;
+            this.cob_create_json_tag_2.Location = new System.Drawing.Point(174, 145);
+            this.cob_create_json_tag_2.Name = "cob_create_json_tag_2";
+            this.cob_create_json_tag_2.Size = new System.Drawing.Size(161, 21);
+            this.cob_create_json_tag_2.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(172, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Tag 2";
+            // 
+            // cob_create_json_tag_1
+            // 
+            this.cob_create_json_tag_1.FormattingEnabled = true;
+            this.cob_create_json_tag_1.Location = new System.Drawing.Point(174, 87);
+            this.cob_create_json_tag_1.Name = "cob_create_json_tag_1";
+            this.cob_create_json_tag_1.Size = new System.Drawing.Size(161, 21);
+            this.cob_create_json_tag_1.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(172, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Tag 1";
+            // 
+            // b_create_json_generate
+            // 
+            this.b_create_json_generate.Location = new System.Drawing.Point(236, 172);
+            this.b_create_json_generate.Name = "b_create_json_generate";
+            this.b_create_json_generate.Size = new System.Drawing.Size(99, 23);
+            this.b_create_json_generate.TabIndex = 9;
+            this.b_create_json_generate.Text = "Generate";
+            this.b_create_json_generate.UseVisualStyleBackColor = true;
+            this.b_create_json_generate.Click += new System.EventHandler(this.b_create_json_generate_Click);
+            // 
+            // cob_create_json_type
+            // 
+            this.cob_create_json_type.FormattingEnabled = true;
+            this.cob_create_json_type.Location = new System.Drawing.Point(174, 38);
+            this.cob_create_json_type.Name = "cob_create_json_type";
+            this.cob_create_json_type.Size = new System.Drawing.Size(161, 21);
+            this.cob_create_json_type.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(172, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Type";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Title";
+            // 
+            // tb_create_json_title
+            // 
+            this.tb_create_json_title.Location = new System.Drawing.Point(6, 38);
+            this.tb_create_json_title.Name = "tb_create_json_title";
+            this.tb_create_json_title.Size = new System.Drawing.Size(160, 20);
+            this.tb_create_json_title.TabIndex = 4;
+            this.tb_create_json_title.Text = "My Addon\'s Title";
             // 
             // l_create_folder
             // 
@@ -128,7 +293,7 @@
             this.tp_extract.Location = new System.Drawing.Point(4, 22);
             this.tp_extract.Name = "tp_extract";
             this.tp_extract.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_extract.Size = new System.Drawing.Size(366, 400);
+            this.tp_extract.Size = new System.Drawing.Size(366, 385);
             this.tp_extract.TabIndex = 1;
             this.tp_extract.Text = "Extract";
             this.tp_extract.UseVisualStyleBackColor = true;
@@ -141,48 +306,10 @@
             this.tp_settings.Controls.Add(this.tb_settings_gmh);
             this.tp_settings.Location = new System.Drawing.Point(4, 22);
             this.tp_settings.Name = "tp_settings";
-            this.tp_settings.Size = new System.Drawing.Size(366, 400);
+            this.tp_settings.Size = new System.Drawing.Size(366, 385);
             this.tp_settings.TabIndex = 2;
             this.tp_settings.Text = "Settings";
             this.tp_settings.UseVisualStyleBackColor = true;
-            // 
-            // l_settings_gmh
-            // 
-            this.l_settings_gmh.AutoSize = true;
-            this.l_settings_gmh.Location = new System.Drawing.Point(6, 9);
-            this.l_settings_gmh.Name = "l_settings_gmh";
-            this.l_settings_gmh.Size = new System.Drawing.Size(94, 13);
-            this.l_settings_gmh.TabIndex = 5;
-            this.l_settings_gmh.Text = "Garry\'s Mod Home";
-            // 
-            // b_settings_gmh
-            // 
-            this.b_settings_gmh.Location = new System.Drawing.Point(326, 26);
-            this.b_settings_gmh.Name = "b_settings_gmh";
-            this.b_settings_gmh.Size = new System.Drawing.Size(24, 24);
-            this.b_settings_gmh.TabIndex = 4;
-            this.b_settings_gmh.Text = "...";
-            this.b_settings_gmh.UseVisualStyleBackColor = true;
-            this.b_settings_gmh.Click += new System.EventHandler(this.b_settings_gmh_Click);
-            // 
-            // tb_settings_gmh
-            // 
-            this.tb_settings_gmh.Location = new System.Drawing.Point(9, 29);
-            this.tb_settings_gmh.Name = "tb_settings_gmh";
-            this.tb_settings_gmh.Size = new System.Drawing.Size(311, 20);
-            this.tb_settings_gmh.TabIndex = 3;
-            this.tb_settings_gmh.Text = "K:\\Programmes\\Steam\\steamapps\\common\\GarrysMod";
-            // 
-            // cb_settings_paths
-            // 
-            this.cb_settings_paths.AutoSize = true;
-            this.cb_settings_paths.Location = new System.Drawing.Point(10, 19);
-            this.cb_settings_paths.Name = "cb_settings_paths";
-            this.cb_settings_paths.Size = new System.Drawing.Size(65, 17);
-            this.cb_settings_paths.TabIndex = 6;
-            this.cb_settings_paths.Text = "Enabled";
-            this.cb_settings_paths.UseVisualStyleBackColor = true;
-            this.cb_settings_paths.CheckedChanged += new System.EventHandler(this.cb_settings_paths_CheckedChanged);
             // 
             // gb_settings_paths
             // 
@@ -199,35 +326,6 @@
             this.gb_settings_paths.TabIndex = 7;
             this.gb_settings_paths.TabStop = false;
             this.gb_settings_paths.Text = "Custom Paths";
-            // 
-            // b_settings_paths_gmad
-            // 
-            this.b_settings_paths_gmad.Enabled = false;
-            this.b_settings_paths_gmad.Location = new System.Drawing.Point(305, 56);
-            this.b_settings_paths_gmad.Name = "b_settings_paths_gmad";
-            this.b_settings_paths_gmad.Size = new System.Drawing.Size(24, 24);
-            this.b_settings_paths_gmad.TabIndex = 9;
-            this.b_settings_paths_gmad.Text = "...";
-            this.b_settings_paths_gmad.UseVisualStyleBackColor = true;
-            // 
-            // tb_settings_paths_gmad
-            // 
-            this.tb_settings_paths_gmad.Enabled = false;
-            this.tb_settings_paths_gmad.Location = new System.Drawing.Point(10, 59);
-            this.tb_settings_paths_gmad.Name = "tb_settings_paths_gmad";
-            this.tb_settings_paths_gmad.Size = new System.Drawing.Size(289, 20);
-            this.tb_settings_paths_gmad.TabIndex = 8;
-            this.tb_settings_paths_gmad.Text = "K:\\Programmes\\Steam\\steamapps\\common\\GarrysMod\\bin\\gmad.exe";
-            // 
-            // l_settings_paths_gmad
-            // 
-            this.l_settings_paths_gmad.AutoSize = true;
-            this.l_settings_paths_gmad.Enabled = false;
-            this.l_settings_paths_gmad.Location = new System.Drawing.Point(7, 39);
-            this.l_settings_paths_gmad.Name = "l_settings_paths_gmad";
-            this.l_settings_paths_gmad.Size = new System.Drawing.Size(33, 13);
-            this.l_settings_paths_gmad.TabIndex = 8;
-            this.l_settings_paths_gmad.Text = "gmad";
             // 
             // l_settings_paths_gmpublish
             // 
@@ -258,184 +356,125 @@
             this.tb_settings_paths_gmpublish.TabIndex = 11;
             this.tb_settings_paths_gmpublish.Text = "K:\\Programmes\\Steam\\steamapps\\common\\GarrysMod\\bin\\gmpublish.exe";
             // 
-            // gb_create_json
+            // l_settings_paths_gmad
             // 
-            this.gb_create_json.Controls.Add(this.label5);
-            this.gb_create_json.Controls.Add(this.tb_create_json_ignore);
-            this.gb_create_json.Controls.Add(this.cob_create_json_tag_2);
-            this.gb_create_json.Controls.Add(this.label4);
-            this.gb_create_json.Controls.Add(this.cob_create_json_tag_1);
-            this.gb_create_json.Controls.Add(this.label3);
-            this.gb_create_json.Controls.Add(this.b_create_json_generate);
-            this.gb_create_json.Controls.Add(this.cob_create_json_type);
-            this.gb_create_json.Controls.Add(this.label2);
-            this.gb_create_json.Controls.Add(this.label1);
-            this.gb_create_json.Controls.Add(this.tb_create_json_title);
-            this.gb_create_json.Location = new System.Drawing.Point(9, 56);
-            this.gb_create_json.Name = "gb_create_json";
-            this.gb_create_json.Size = new System.Drawing.Size(341, 202);
-            this.gb_create_json.TabIndex = 3;
-            this.gb_create_json.TabStop = false;
-            this.gb_create_json.Text = "JSON";
+            this.l_settings_paths_gmad.AutoSize = true;
+            this.l_settings_paths_gmad.Enabled = false;
+            this.l_settings_paths_gmad.Location = new System.Drawing.Point(7, 39);
+            this.l_settings_paths_gmad.Name = "l_settings_paths_gmad";
+            this.l_settings_paths_gmad.Size = new System.Drawing.Size(33, 13);
+            this.l_settings_paths_gmad.TabIndex = 8;
+            this.l_settings_paths_gmad.Text = "gmad";
             // 
-            // label1
+            // b_settings_paths_gmad
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Title";
+            this.b_settings_paths_gmad.Enabled = false;
+            this.b_settings_paths_gmad.Location = new System.Drawing.Point(305, 56);
+            this.b_settings_paths_gmad.Name = "b_settings_paths_gmad";
+            this.b_settings_paths_gmad.Size = new System.Drawing.Size(24, 24);
+            this.b_settings_paths_gmad.TabIndex = 9;
+            this.b_settings_paths_gmad.Text = "...";
+            this.b_settings_paths_gmad.UseVisualStyleBackColor = true;
             // 
-            // tb_create_json_title
+            // cb_settings_paths
             // 
-            this.tb_create_json_title.Location = new System.Drawing.Point(6, 38);
-            this.tb_create_json_title.Name = "tb_create_json_title";
-            this.tb_create_json_title.Size = new System.Drawing.Size(160, 20);
-            this.tb_create_json_title.TabIndex = 4;
-            this.tb_create_json_title.Text = "My Addon\'s Title";
+            this.cb_settings_paths.AutoSize = true;
+            this.cb_settings_paths.Location = new System.Drawing.Point(10, 19);
+            this.cb_settings_paths.Name = "cb_settings_paths";
+            this.cb_settings_paths.Size = new System.Drawing.Size(65, 17);
+            this.cb_settings_paths.TabIndex = 6;
+            this.cb_settings_paths.Text = "Enabled";
+            this.cb_settings_paths.UseVisualStyleBackColor = true;
+            this.cb_settings_paths.CheckedChanged += new System.EventHandler(this.cb_settings_paths_CheckedChanged);
             // 
-            // label2
+            // tb_settings_paths_gmad
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(172, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Type";
+            this.tb_settings_paths_gmad.Enabled = false;
+            this.tb_settings_paths_gmad.Location = new System.Drawing.Point(10, 59);
+            this.tb_settings_paths_gmad.Name = "tb_settings_paths_gmad";
+            this.tb_settings_paths_gmad.Size = new System.Drawing.Size(289, 20);
+            this.tb_settings_paths_gmad.TabIndex = 8;
+            this.tb_settings_paths_gmad.Text = "K:\\Programmes\\Steam\\steamapps\\common\\GarrysMod\\bin\\gmad.exe";
             // 
-            // cob_create_json_type
+            // l_settings_gmh
             // 
-            this.cob_create_json_type.FormattingEnabled = true;
-            this.cob_create_json_type.Location = new System.Drawing.Point(174, 38);
-            this.cob_create_json_type.Name = "cob_create_json_type";
-            this.cob_create_json_type.Size = new System.Drawing.Size(161, 21);
-            this.cob_create_json_type.TabIndex = 8;
+            this.l_settings_gmh.AutoSize = true;
+            this.l_settings_gmh.Location = new System.Drawing.Point(6, 9);
+            this.l_settings_gmh.Name = "l_settings_gmh";
+            this.l_settings_gmh.Size = new System.Drawing.Size(94, 13);
+            this.l_settings_gmh.TabIndex = 5;
+            this.l_settings_gmh.Text = "Garry\'s Mod Home";
             // 
-            // b_create_json_generate
+            // b_settings_gmh
             // 
-            this.b_create_json_generate.Location = new System.Drawing.Point(90, 172);
-            this.b_create_json_generate.Name = "b_create_json_generate";
-            this.b_create_json_generate.Size = new System.Drawing.Size(160, 23);
-            this.b_create_json_generate.TabIndex = 9;
-            this.b_create_json_generate.Text = "Generate";
-            this.b_create_json_generate.UseVisualStyleBackColor = true;
-            this.b_create_json_generate.Click += new System.EventHandler(this.b_create_json_generate_Click);
+            this.b_settings_gmh.Location = new System.Drawing.Point(326, 26);
+            this.b_settings_gmh.Name = "b_settings_gmh";
+            this.b_settings_gmh.Size = new System.Drawing.Size(24, 24);
+            this.b_settings_gmh.TabIndex = 4;
+            this.b_settings_gmh.Text = "...";
+            this.b_settings_gmh.UseVisualStyleBackColor = true;
+            this.b_settings_gmh.Click += new System.EventHandler(this.b_settings_gmh_Click);
             // 
-            // cob_create_json_tag_1
+            // tb_settings_gmh
             // 
-            this.cob_create_json_tag_1.FormattingEnabled = true;
-            this.cob_create_json_tag_1.Location = new System.Drawing.Point(174, 87);
-            this.cob_create_json_tag_1.Name = "cob_create_json_tag_1";
-            this.cob_create_json_tag_1.Size = new System.Drawing.Size(161, 21);
-            this.cob_create_json_tag_1.TabIndex = 11;
+            this.tb_settings_gmh.Location = new System.Drawing.Point(9, 29);
+            this.tb_settings_gmh.Name = "tb_settings_gmh";
+            this.tb_settings_gmh.Size = new System.Drawing.Size(311, 20);
+            this.tb_settings_gmh.TabIndex = 3;
+            this.tb_settings_gmh.Text = "K:\\Programmes\\Steam\\steamapps\\common\\GarrysMod";
             // 
-            // label3
+            // l_version
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(172, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Tag 1";
+            this.l_version.AutoSize = true;
+            this.l_version.Location = new System.Drawing.Point(9, 428);
+            this.l_version.Name = "l_version";
+            this.l_version.Size = new System.Drawing.Size(48, 13);
+            this.l_version.TabIndex = 4;
+            this.l_version.Text = "[Version]";
             // 
-            // cob_create_json_tag_2
+            // l_author
             // 
-            this.cob_create_json_tag_2.FormattingEnabled = true;
-            this.cob_create_json_tag_2.Location = new System.Drawing.Point(174, 145);
-            this.cob_create_json_tag_2.Name = "cob_create_json_tag_2";
-            this.cob_create_json_tag_2.Size = new System.Drawing.Size(161, 21);
-            this.cob_create_json_tag_2.TabIndex = 13;
+            this.l_author.AutoSize = true;
+            this.l_author.Location = new System.Drawing.Point(332, 428);
+            this.l_author.Name = "l_author";
+            this.l_author.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.l_author.Size = new System.Drawing.Size(44, 13);
+            this.l_author.TabIndex = 5;
+            this.l_author.Text = "[Author]";
+            this.l_author.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label4
+            // b_create_json_find
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(172, 125);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Tag 2";
-            // 
-            // tb_create_json_ignore
-            // 
-            this.tb_create_json_ignore.Location = new System.Drawing.Point(7, 87);
-            this.tb_create_json_ignore.Multiline = true;
-            this.tb_create_json_ignore.Name = "tb_create_json_ignore";
-            this.tb_create_json_ignore.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_create_json_ignore.Size = new System.Drawing.Size(159, 79);
-            this.tb_create_json_ignore.TabIndex = 14;
-            this.tb_create_json_ignore.Text = ".gman/*";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 67);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Ignore";
-            // 
-            // gb_create_workshop
-            // 
-            this.gb_create_workshop.Controls.Add(this.b_create_workshop_compress);
-            this.gb_create_workshop.Controls.Add(this.b_create_workshop_update);
-            this.gb_create_workshop.Controls.Add(this.b_create_workshop_publish);
-            this.gb_create_workshop.Location = new System.Drawing.Point(9, 265);
-            this.gb_create_workshop.Name = "gb_create_workshop";
-            this.gb_create_workshop.Size = new System.Drawing.Size(341, 111);
-            this.gb_create_workshop.TabIndex = 4;
-            this.gb_create_workshop.TabStop = false;
-            this.gb_create_workshop.Text = "Workshop";
-            // 
-            // b_create_workshop_publish
-            // 
-            this.b_create_workshop_publish.Location = new System.Drawing.Point(79, 48);
-            this.b_create_workshop_publish.Name = "b_create_workshop_publish";
-            this.b_create_workshop_publish.Size = new System.Drawing.Size(181, 23);
-            this.b_create_workshop_publish.TabIndex = 0;
-            this.b_create_workshop_publish.Text = "Publish";
-            this.b_create_workshop_publish.UseVisualStyleBackColor = true;
-            this.b_create_workshop_publish.Click += new System.EventHandler(this.b_create_workshop_publish_Click);
-            // 
-            // b_create_workshop_update
-            // 
-            this.b_create_workshop_update.Enabled = false;
-            this.b_create_workshop_update.Location = new System.Drawing.Point(79, 77);
-            this.b_create_workshop_update.Name = "b_create_workshop_update";
-            this.b_create_workshop_update.Size = new System.Drawing.Size(181, 23);
-            this.b_create_workshop_update.TabIndex = 1;
-            this.b_create_workshop_update.Text = "Update";
-            this.b_create_workshop_update.UseVisualStyleBackColor = true;
-            // 
-            // b_create_workshop_compress
-            // 
-            this.b_create_workshop_compress.Location = new System.Drawing.Point(79, 19);
-            this.b_create_workshop_compress.Name = "b_create_workshop_compress";
-            this.b_create_workshop_compress.Size = new System.Drawing.Size(181, 23);
-            this.b_create_workshop_compress.TabIndex = 2;
-            this.b_create_workshop_compress.Text = "Compress";
-            this.b_create_workshop_compress.UseVisualStyleBackColor = true;
-            this.b_create_workshop_compress.Click += new System.EventHandler(this.b_create_workshop_compress_Click);
+            this.b_create_json_find.Location = new System.Drawing.Point(174, 172);
+            this.b_create_json_find.Name = "b_create_json_find";
+            this.b_create_json_find.Size = new System.Drawing.Size(56, 23);
+            this.b_create_json_find.TabIndex = 16;
+            this.b_create_json_find.Text = "Find";
+            this.b_create_json_find.UseVisualStyleBackColor = true;
+            this.b_create_json_find.Click += new System.EventHandler(this.b_create_json_find_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 434);
+            this.ClientSize = new System.Drawing.Size(398, 447);
+            this.Controls.Add(this.l_author);
+            this.Controls.Add(this.l_version);
             this.Controls.Add(this.tc_main);
             this.Name = "Main";
             this.Text = "Garry\'s Mod Addon Nanomatic";
             this.tc_main.ResumeLayout(false);
             this.tp_create.ResumeLayout(false);
             this.tp_create.PerformLayout();
+            this.gb_create_gma.ResumeLayout(false);
+            this.gb_create_json.ResumeLayout(false);
+            this.gb_create_json.PerformLayout();
             this.tp_settings.ResumeLayout(false);
             this.tp_settings.PerformLayout();
             this.gb_settings_paths.ResumeLayout(false);
             this.gb_settings_paths.PerformLayout();
-            this.gb_create_json.ResumeLayout(false);
-            this.gb_create_json.PerformLayout();
-            this.gb_create_workshop.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -471,10 +510,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tb_create_json_ignore;
-        private System.Windows.Forms.GroupBox gb_create_workshop;
-        private System.Windows.Forms.Button b_create_workshop_update;
-        private System.Windows.Forms.Button b_create_workshop_publish;
-        private System.Windows.Forms.Button b_create_workshop_compress;
+        private System.Windows.Forms.GroupBox gb_create_gma;
+        private System.Windows.Forms.Button b_create_gma_update;
+        private System.Windows.Forms.Button b_create_gma_publish;
+        private System.Windows.Forms.Button b_create_gma_compress;
+        private System.Windows.Forms.ToolTip tool_tip;
+        private System.Windows.Forms.Label l_version;
+        private System.Windows.Forms.Label l_author;
+        private System.Windows.Forms.Button b_create_json_find;
     }
 }
 

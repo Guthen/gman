@@ -6,14 +6,14 @@ namespace gman.Classes
 {
     static class GMA
     {
-        private static string Run( string cmd )
+        private static string Run( string file_name, string args )
         {
             var process = new Process()
             {
                 StartInfo =
                 {
-                    FileName = "cmd.exe",
-                    RedirectStandardInput = true,
+                    FileName = file_name,
+                    Arguments = args,
                     RedirectStandardOutput = true,
                     CreateNoWindow = true,
                     UseShellExecute = false,
@@ -21,9 +21,6 @@ namespace gman.Classes
             };
 
             process.Start();
-            process.StandardInput.WriteLine( cmd );
-            process.StandardInput.Flush();
-            process.StandardInput.Close();
             process.WaitForExit();
 
             return process.StandardOutput.ReadToEnd();
@@ -31,12 +28,17 @@ namespace gman.Classes
 
         public static string Compress( string gmad_path, string folder_path, string out_path )
         {
-            return Run( String.Format( "\"{0}\" create -folder \"{1}\" -out \"{2}\"", gmad_path, folder_path, out_path ) );
+            return Run( gmad_path, String.Format( "create -folder \"{0}\" -out \"{1}\"", folder_path, out_path ) );
         }
 
         public static string Publish( string gmpublish_path, string gma_path, string icon_path )
         {
-            return Run( String.Format( "\"{0}\" create -addon \"{1}\" -icon \"{2}\"", gmpublish_path, gma_path, icon_path ) );
+            return Run( gmpublish_path, String.Format( "create -addon \"{0}\" -icon \"{1}\"", gma_path, icon_path ) );
+        }
+
+        public static string Update( string gmpublish_path, string gma_path, string id, string changes )
+        {
+            return Run( gmpublish_path, String.Format( "update -addon \"{0}\" -id \"{1}\" -changes \"{2}\"", gma_path, id, changes ) );
         }
     }
 }

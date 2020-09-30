@@ -7,6 +7,19 @@ using Newtonsoft.Json;
 
 namespace gman
 {
+    [Serializable]
+    class BadFormArgumentException : Exception
+    {
+        public new string Message;
+        public string FormID;
+
+        public BadFormArgumentException( string message, string form_id )
+        {
+            Message = message;
+            FormID = form_id;
+        }
+    }
+
     class AddonJSON
     {
         public static string[] Types = new string[]
@@ -49,7 +62,7 @@ namespace gman
             if ( Types.Contains( type ) )
                 this.type = type;
             else
-                throw new ArgumentException( String.Format( "Type '{0}' is not a valid type.", type ) );
+                throw new BadFormArgumentException( "This type is not a valid type.", "type" );
 
             //  > Tags
             for ( int i = 0; i < 2; i++ )
@@ -57,7 +70,8 @@ namespace gman
                 if ( Tags.Contains( tags[i] ) )
                     this.tags[i] = tags[i];
                 else
-                    throw new ArgumentException( String.Format( "Tag {0} is not a valid tag.", i + 1 ) );
+                    throw new BadFormArgumentException( "This tag is not a valid tag.", "tag_" + ( i +
+                         1 ).ToString() );
             }
 
             //  > Ignore
