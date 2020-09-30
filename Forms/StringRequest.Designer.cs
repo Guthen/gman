@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StringRequest));
             this.tb_string_request = new System.Windows.Forms.TextBox();
             this.b_ok = new System.Windows.Forms.Button();
             this.b_cancel = new System.Windows.Forms.Button();
@@ -80,6 +81,7 @@
             this.Controls.Add(this.b_cancel);
             this.Controls.Add(this.b_ok);
             this.Controls.Add(this.tb_string_request);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StringRequest";
             this.Text = "StringRequest";
             this.ResumeLayout(false);

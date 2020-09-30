@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.tc_main = new System.Windows.Forms.TabControl();
             this.tp_create = new System.Windows.Forms.TabPage();
             this.gb_create_gma = new System.Windows.Forms.GroupBox();
@@ -36,6 +37,7 @@
             this.b_create_gma_update = new System.Windows.Forms.Button();
             this.b_create_gma_publish = new System.Windows.Forms.Button();
             this.gb_create_json = new System.Windows.Forms.GroupBox();
+            this.b_create_json_find = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_create_json_ignore = new System.Windows.Forms.TextBox();
             this.cob_create_json_tag_2 = new System.Windows.Forms.ComboBox();
@@ -53,11 +55,10 @@
             this.tp_extract = new System.Windows.Forms.TabPage();
             this.tp_settings = new System.Windows.Forms.TabPage();
             this.gb_settings_paths = new System.Windows.Forms.GroupBox();
+            this.b_settings_paths_gmad = new System.Windows.Forms.Button();
             this.l_settings_paths_gmpublish = new System.Windows.Forms.Label();
-            this.b_settings_paths_gmpublish = new System.Windows.Forms.Button();
             this.tb_settings_paths_gmpublish = new System.Windows.Forms.TextBox();
             this.l_settings_paths_gmad = new System.Windows.Forms.Label();
-            this.b_settings_paths_gmad = new System.Windows.Forms.Button();
             this.cb_settings_paths = new System.Windows.Forms.CheckBox();
             this.tb_settings_paths_gmad = new System.Windows.Forms.TextBox();
             this.l_settings_gmh = new System.Windows.Forms.Label();
@@ -66,7 +67,7 @@
             this.tool_tip = new System.Windows.Forms.ToolTip(this.components);
             this.l_version = new System.Windows.Forms.Label();
             this.l_author = new System.Windows.Forms.Label();
-            this.b_create_json_find = new System.Windows.Forms.Button();
+            this.b_settings_paths_gmpublish = new System.Windows.Forms.Button();
             this.tc_main.SuspendLayout();
             this.tp_create.SuspendLayout();
             this.gb_create_gma.SuspendLayout();
@@ -164,6 +165,16 @@
             this.gb_create_json.TabIndex = 3;
             this.gb_create_json.TabStop = false;
             this.gb_create_json.Text = "JSON";
+            // 
+            // b_create_json_find
+            // 
+            this.b_create_json_find.Location = new System.Drawing.Point(174, 172);
+            this.b_create_json_find.Name = "b_create_json_find";
+            this.b_create_json_find.Size = new System.Drawing.Size(56, 23);
+            this.b_create_json_find.TabIndex = 16;
+            this.b_create_json_find.Text = "Find";
+            this.b_create_json_find.UseVisualStyleBackColor = true;
+            this.b_create_json_find.Click += new System.EventHandler(this.b_create_json_find_Click);
             // 
             // label5
             // 
@@ -313,11 +324,11 @@
             // 
             // gb_settings_paths
             // 
-            this.gb_settings_paths.Controls.Add(this.l_settings_paths_gmpublish);
             this.gb_settings_paths.Controls.Add(this.b_settings_paths_gmpublish);
+            this.gb_settings_paths.Controls.Add(this.b_settings_paths_gmad);
+            this.gb_settings_paths.Controls.Add(this.l_settings_paths_gmpublish);
             this.gb_settings_paths.Controls.Add(this.tb_settings_paths_gmpublish);
             this.gb_settings_paths.Controls.Add(this.l_settings_paths_gmad);
-            this.gb_settings_paths.Controls.Add(this.b_settings_paths_gmad);
             this.gb_settings_paths.Controls.Add(this.cb_settings_paths);
             this.gb_settings_paths.Controls.Add(this.tb_settings_paths_gmad);
             this.gb_settings_paths.Location = new System.Drawing.Point(9, 56);
@@ -326,6 +337,17 @@
             this.gb_settings_paths.TabIndex = 7;
             this.gb_settings_paths.TabStop = false;
             this.gb_settings_paths.Text = "Custom Paths";
+            // 
+            // b_settings_paths_gmad
+            // 
+            this.b_settings_paths_gmad.Enabled = false;
+            this.b_settings_paths_gmad.Location = new System.Drawing.Point(305, 55);
+            this.b_settings_paths_gmad.Name = "b_settings_paths_gmad";
+            this.b_settings_paths_gmad.Size = new System.Drawing.Size(24, 24);
+            this.b_settings_paths_gmad.TabIndex = 13;
+            this.b_settings_paths_gmad.Text = "...";
+            this.b_settings_paths_gmad.UseVisualStyleBackColor = true;
+            this.b_settings_paths_gmad.Click += new System.EventHandler(this.b_settings_paths_gmad_Click);
             // 
             // l_settings_paths_gmpublish
             // 
@@ -336,16 +358,6 @@
             this.l_settings_paths_gmpublish.Size = new System.Drawing.Size(54, 13);
             this.l_settings_paths_gmpublish.TabIndex = 10;
             this.l_settings_paths_gmpublish.Text = "gmpublish";
-            // 
-            // b_settings_paths_gmpublish
-            // 
-            this.b_settings_paths_gmpublish.Enabled = false;
-            this.b_settings_paths_gmpublish.Location = new System.Drawing.Point(305, 106);
-            this.b_settings_paths_gmpublish.Name = "b_settings_paths_gmpublish";
-            this.b_settings_paths_gmpublish.Size = new System.Drawing.Size(24, 24);
-            this.b_settings_paths_gmpublish.TabIndex = 12;
-            this.b_settings_paths_gmpublish.Text = "...";
-            this.b_settings_paths_gmpublish.UseVisualStyleBackColor = true;
             // 
             // tb_settings_paths_gmpublish
             // 
@@ -365,16 +377,6 @@
             this.l_settings_paths_gmad.Size = new System.Drawing.Size(33, 13);
             this.l_settings_paths_gmad.TabIndex = 8;
             this.l_settings_paths_gmad.Text = "gmad";
-            // 
-            // b_settings_paths_gmad
-            // 
-            this.b_settings_paths_gmad.Enabled = false;
-            this.b_settings_paths_gmad.Location = new System.Drawing.Point(305, 56);
-            this.b_settings_paths_gmad.Name = "b_settings_paths_gmad";
-            this.b_settings_paths_gmad.Size = new System.Drawing.Size(24, 24);
-            this.b_settings_paths_gmad.TabIndex = 9;
-            this.b_settings_paths_gmad.Text = "...";
-            this.b_settings_paths_gmad.UseVisualStyleBackColor = true;
             // 
             // cb_settings_paths
             // 
@@ -443,15 +445,16 @@
             this.l_author.Text = "[Author]";
             this.l_author.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // b_create_json_find
+            // b_settings_paths_gmpublish
             // 
-            this.b_create_json_find.Location = new System.Drawing.Point(174, 172);
-            this.b_create_json_find.Name = "b_create_json_find";
-            this.b_create_json_find.Size = new System.Drawing.Size(56, 23);
-            this.b_create_json_find.TabIndex = 16;
-            this.b_create_json_find.Text = "Find";
-            this.b_create_json_find.UseVisualStyleBackColor = true;
-            this.b_create_json_find.Click += new System.EventHandler(this.b_create_json_find_Click);
+            this.b_settings_paths_gmpublish.Enabled = false;
+            this.b_settings_paths_gmpublish.Location = new System.Drawing.Point(305, 105);
+            this.b_settings_paths_gmpublish.Name = "b_settings_paths_gmpublish";
+            this.b_settings_paths_gmpublish.Size = new System.Drawing.Size(24, 24);
+            this.b_settings_paths_gmpublish.TabIndex = 14;
+            this.b_settings_paths_gmpublish.Text = "...";
+            this.b_settings_paths_gmpublish.UseVisualStyleBackColor = true;
+            this.b_settings_paths_gmpublish.Click += new System.EventHandler(this.b_settings_paths_gmpublish_Click);
             // 
             // Main
             // 
@@ -461,6 +464,7 @@
             this.Controls.Add(this.l_author);
             this.Controls.Add(this.l_version);
             this.Controls.Add(this.tc_main);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Garry\'s Mod Addon Nanomatic";
             this.tc_main.ResumeLayout(false);
@@ -493,9 +497,7 @@
         private System.Windows.Forms.Button b_settings_gmh;
         private System.Windows.Forms.TextBox tb_settings_gmh;
         private System.Windows.Forms.Label l_settings_paths_gmad;
-        private System.Windows.Forms.Button b_settings_paths_gmad;
         private System.Windows.Forms.TextBox tb_settings_paths_gmad;
-        private System.Windows.Forms.Button b_settings_paths_gmpublish;
         private System.Windows.Forms.TextBox tb_settings_paths_gmpublish;
         private System.Windows.Forms.Label l_settings_paths_gmpublish;
         private System.Windows.Forms.GroupBox gb_create_json;
@@ -518,6 +520,8 @@
         private System.Windows.Forms.Label l_version;
         private System.Windows.Forms.Label l_author;
         private System.Windows.Forms.Button b_create_json_find;
+        private System.Windows.Forms.Button b_settings_paths_gmad;
+        private System.Windows.Forms.Button b_settings_paths_gmpublish;
     }
 }
 

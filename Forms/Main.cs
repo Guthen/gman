@@ -6,13 +6,13 @@ using gman.Classes;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
-using Microsoft.WindowsAPICodePack.Controls.WindowsForms;
+using System.Configuration;
 
 namespace gman
 {
     public partial class Main : Form
     {
-        public string Version = "v2020.09.30";
+        public string Version = "v2020.09.30a develop";
         public string Author = "by Guthen";
 
         public Main()
@@ -26,6 +26,12 @@ namespace gman
             cob_create_json_type.Items.AddRange( AddonJSON.Types );
             cob_create_json_tag_1.Items.AddRange( AddonJSON.Tags );
             cob_create_json_tag_2.Items.AddRange( AddonJSON.Tags );
+
+            //  > Set config parameters
+            tb_create_folder.Text = ConfigurationManager.AppSettings.Get( "addon_folder" );
+            tb_settings_gmh.Text = ConfigurationManager.AppSettings.Get( "gmh" );
+            tb_settings_paths_gmad.Text = ConfigurationManager.AppSettings.Get( "gmad" );
+            tb_settings_paths_gmpublish.Text = ConfigurationManager.AppSettings.Get( "gmpublish" );
 
             RefreshForm();
         }
@@ -72,6 +78,13 @@ namespace gman
             output_form.ShowDialog( this );
         }
 
+        private void set_config( string key, string value )
+        {
+            var config = ConfigurationManager.OpenExeConfiguration( ConfigurationUserLevel.None );
+            config.AppSettings.Settings[key].Value = value;
+            config.Save();
+        }
+
         private void error_control( Control control, string message )
         {
             //  > Focus & Tooltip
@@ -90,14 +103,17 @@ namespace gman
                 Directory.CreateDirectory( path ).Attributes |= FileAttributes.Hidden;
         }
 
-        private void choose_folder_dialog( TextBox text_box )
+        private void choose_folder_dialog( TextBox text_box, bool is_folder_picker = true, CommonFileDialogFilter filter = null )
         {
             //  > Choose folder dialog
             var dialog = new CommonOpenFileDialog()
             {
                 InitialDirectory = text_box.Text,
-                IsFolderPicker = true,
+                IsFolderPicker = is_folder_picker,
             };
+
+            if ( !( filter == null ) )
+                dialog.Filters.Add( filter );
 
             //  > Change folder path
             if ( dialog.ShowDialog() == CommonFileDialogResult.Ok )
@@ -111,6 +127,7 @@ namespace gman
         //
         private void b_create_folder_Click( object sender, EventArgs ea ) {
             choose_folder_dialog( tb_create_folder );
+            set_config( "addon_folder", tb_create_folder.Text );
 
             ///  > JSON
             //  > Check Existence
@@ -247,9 +264,23 @@ namespace gman
         //
         ///  > Category: Settings
         //
-        private void b_settings_gmh_Click( object sender, EventArgs e ) => choose_folder_dialog( tb_settings_gmh );
-        private void b_settings_gmh_gmad_Click( object sender, EventArgs e ) => choose_folder_dialog( tb_settings_paths_gmad );
-        private void b_settings_gmh_gmpublish_Click( object sender, EventArgs e ) => choose_folder_dialog( tb_settings_paths_gmpublish );
+        private void b_settings_gmh_Click( object sender, EventArgs e )
+        {
+            choose_folder_dialog( tb_settings_gmh );
+            set_config( "gmh", tb_settings_gmh.Text );
+        }
+
+        private void b_settings_paths_gmad_Click( object sender, EventArgs e )
+        {
+            choose_folder_dialog( tb_settings_paths_gmad, false, new CommonFileDialogFilter( "gmad", "*.exe" ) );
+            set_config( "gmad", tb_settings_paths_gmad.Text );
+        }
+
+        private void b_settings_paths_gmpublish_Click( object sender, EventArgs e )
+        {
+            choose_folder_dialog( tb_settings_paths_gmpublish, false, new CommonFileDialogFilter( "gmpublish", "*.exe" ) );
+            set_config( "gmpublish", tb_settings_paths_gmpublish.Text );
+        }
 
         //  > Enables/Disables customs paths
         private void cb_settings_paths_CheckedChanged( object sender, EventArgs e )

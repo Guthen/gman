@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Output));
             this.tb_output = new System.Windows.Forms.TextBox();
             this.b_ok = new System.Windows.Forms.Button();
             this.b_copy_all = new System.Windows.Forms.Button();
@@ -93,6 +94,7 @@
             this.Controls.Add(this.b_copy_all);
             this.Controls.Add(this.b_ok);
             this.Controls.Add(this.tb_output);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Output";
             this.Text = "Output";
             this.ResumeLayout(false);
