@@ -12,7 +12,7 @@ namespace gman
 {
     public partial class Main : Form
     {
-        public string Version = "v2020.09.30a develop";
+        public string Version = "v2021.05.21a develop";
         public string Author = "by Guthen";
 
         public Main()
@@ -34,6 +34,7 @@ namespace gman
             tb_settings_paths_gmpublish.Text = ConfigurationManager.AppSettings.Get( "gmpublish" );
 
             RefreshForm();
+            read_addon_json();
         }
 
         public void RefreshForm()
@@ -140,10 +141,26 @@ namespace gman
             }
 
             //  > Read & Convert
+            RefreshForm();
+            read_addon_json();
+        }
+
+        private bool read_addon_json()
+        {
+            //  > Check Existence
+            var path = Path.Combine( tb_create_folder.Text, "addon.json" );
+            if ( !File.Exists( path ) )
+            {
+                gb_create_gma.Enabled = false;
+                b_create_json_find.Enabled = false;
+                return false;
+            }
+
+            //  > Read & Convert
             var json = File.ReadAllText( path );
             try
             {
-                RefreshForm();
+                //RefreshForm();
                 var addon = JsonConvert.DeserializeObject<AddonJSON>( json );
 
                 //  > Replace
@@ -152,6 +169,8 @@ namespace gman
                 cob_create_json_type.Text = addon.type;
                 cob_create_json_tag_1.Text = addon.tags[0];
                 cob_create_json_tag_2.Text = addon.tags[1];
+
+                return true;
             }
             catch ( JsonSerializationException e )
             {
@@ -161,6 +180,8 @@ namespace gman
             {
                 Notification.Error( e.Message, "JSON Reading Bad Argument" );
             }
+
+            return false;
         }
 
         //  > Find JSON

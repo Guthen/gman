@@ -8,6 +8,9 @@ namespace gman.Classes
     {
         private static string Run( string file_name, string args )
         {
+            if ( !File.Exists( file_name ) )
+                return "Executable not found at '" + file_name + "'!";
+
             var process = new Process()
             {
                 StartInfo =
@@ -28,6 +31,7 @@ namespace gman.Classes
 
         public static string Compress( string gmad_path, string folder_path, string out_path )
         {
+            Console.WriteLine( "{0} out to {1}" );
             return Run( gmad_path, String.Format( "create -folder \"{0}\" -out \"{1}\"", folder_path, out_path ) );
         }
 
