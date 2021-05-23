@@ -12,7 +12,7 @@ namespace gman
 {
     public partial class Main : Form
     {
-        public string Version = "v2021.05.21a develop";
+        public string Version = "v2021.05.23a develop";
         public string Author = "by Guthen";
 
         public Main()
@@ -33,11 +33,11 @@ namespace gman
             tb_settings_paths_gmad.Text = ConfigurationManager.AppSettings.Get( "gmad" );
             tb_settings_paths_gmpublish.Text = ConfigurationManager.AppSettings.Get( "gmpublish" );
 
-            RefreshForm();
+            refresh_form();
             read_addon_json();
         }
 
-        public void RefreshForm()
+        public void refresh_form()
         {
             var folder = tb_create_folder.Text;
 
@@ -141,7 +141,7 @@ namespace gman
             }
 
             //  > Read & Convert
-            RefreshForm();
+            refresh_form();
             read_addon_json();
         }
 
@@ -207,7 +207,7 @@ namespace gman
 
                 var path = Path.Combine( tb_create_folder.Text, "addon.json" );
                 File.WriteAllText( path, addon.ToString() );
-                RefreshForm();           
+                refresh_form();           
                 
                 Notification.Inform( String.Format( "JSON file has been generated and saved in '{0}'.", path ) );
             }
@@ -234,7 +234,8 @@ namespace gman
         private void b_create_gma_compress_Click( object sender, EventArgs e )
         {
             compress_addon();
-            RefreshForm();
+            refresh_form();
+            read_addon_json();
         }
 
         private void b_create_gma_publish_Click( object sender, EventArgs e )
